@@ -61,7 +61,7 @@ class CheckoutView(TemplateView):
             pickup=request.POST.get('Pickup_date')
             subject="Booking Confirmation"
             msg=f"Your Booking for {car.title} is successfull"
-            fr_om="juvairiyackck@gmail.com"
+            fr_om="dummy@example.com"
             to_ad=[user.email]
             send_mail(subject,msg,fr_om,to_ad)
             car.isavailable=False
@@ -95,7 +95,7 @@ def CancelBooking(request,*args,**kwargs):
         book=Booking.objects.get(id=bid)
         subject="Booking Cancelling Acknowledgment"
         msg=f"Your Booking for {book.car.title} is successfully Cancelled"
-        fr_om="juvairiyackck@gmail.com"
+        fr_om="dummy@example.com"
         to_ad=[request.user.email]
         send_mail(subject,msg,fr_om,to_ad)
         book.car.isavailable=True
