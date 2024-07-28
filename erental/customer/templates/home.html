@@ -1,0 +1,130 @@
+{% extends 'nav.html '%}
+{% block nav %}
+{% load static %} 
+{% if messages %}
+{% for i in messages%}
+    {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <div class="alert alert-success">
+          {{i}}
+        </div>
+    {% endif %}
+    {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+      <div class="alert alert-danger">
+         {{i}}
+      </div>
+    {% endif %}
+{% endfor %}
+{% endif %}
+    <div style="background-color: rgb(174, 218, 215); height: 200px;" class="border-0 p-4 shadow">
+       <h2 class="d-flex justify-content-center">WELCOME,<span class="text-light">{{request.user.first_name}} {{request.user.last_name}}</span></h2>
+       <h4 class="d-flex justify-content-center mt-3 p-2">YOU CAN SELECT WIDE RANGE OF CARS FROM HERE...</h4>
+      <div class="d-flex justify-content-center p-3">
+        <a href="#home1" class="btn btn-dark">Click On</a>
+      </div>
+    </div>
+
+
+    <section class="slide1">
+      <!-- Carousel Section -->
+      <div id="carouselExampleCaptions" class="carousel slide carousel-fade border border-1 mt-0 shadow" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'images/erent9.jpg' %}" class="d-block w-100" alt="Slide 1" style="height: 500px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h4 class="text text-info">Just-right deals for you.</h4>
+                    <p>Get the best car rental deals for your next adventure.</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="{% static 'images/erent10.jpg' %}" class="d-block w-100" alt="Slide 2" style="height: 500px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h4 class="text text-info">#Wanderlust activated!</h4>
+                    <p>Live the life of Luxury.</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="{% static 'images/erent13.jpg' %}" class="d-block w-100" alt="Slide 3" style="height: 500px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h4 class="text text-info">Adventure more.Spend less.</h4>
+                    <p>Enjoy exclusive savings and benefits on car rentals.</p>
+                  </div>
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+    </section>
+    
+
+ <div class="border border-0 shadow p-2 mx-3 my-5" id="home1">
+  <div class="w-80 border rounded mt-5 p-4 mx-5 shadow" style="height: 100px; background-color: rgb(0, 162, 255);">
+      <h2 class="d-flex justify-content-center text-light">AVAILABLE LOCATIONS IN KERALA</h2>
+  </div>
+  <div class="p-5 d-flex justify-content-evenly mt-0 mx-5 border border-3 shadow mb-5" style="width: 1155px;">
+    <div class="card shadow" style="width: 18rem;">
+      <img src="https://www.crescent-builders.com/blog/wp-content/uploads/2020/07/7436506.jpg" class="card-img-top" width="100%" height="200px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Calicut</h5>
+        <a href="{% url 'cars' 'Calicut' %}" class="stretched-link"></a>
+      </div>
+    </div>
+    <div class="card shadow" style="width: 18rem;">
+      <img src="https://media.istockphoto.com/id/148423909/photo/a-sunset-over-chinese-fishing-nets-by-a-canoe-in-cochin.jpg?s=612x612&w=0&k=20&c=76RtSZhX5iheTAyDuH6Uzl9JNWD5axbWlEWc2bXKChw=" class="card-img-top"width="100%" height="200px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Kochi</h5>
+        <a href="{% url 'cars' 'Kochi' %}" class="stretched-link"></a>
+      </div>
+    </div>
+    <div class="card shadow" style="width: 18rem;">
+      <img src="https://static2.tripoto.com/media/filter/tst/img/809199/TripDocument/1542214659_img_20150616_114558.jpg" class="card-img-top" width="100%" height="200px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Trivandrum</h5>
+        <a href="{% url 'cars' 'Trivandrum' %}" class="stretched-link"></a>
+      </div>
+    </div>
+    <div class="card shadow" style="width: 18rem;">
+      <img src="https://img.onmanorama.com/content/dam/mm/en/travel/getting-about-kerala/kannur/images/2019/4/7/kannur-beach-1.jpg" class="card-img-top" width="100%" height="200px"  alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Kannur</h5>
+        <a href="{% url 'cars' 'Kannur' %}" class="stretched-link"></a>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<div class="border border-0 shadow p-2 mx-3 my-5">
+  <div class=" w-80 border rounded  p-4 mx-5 shadow mt-5" style="height: 100px; background-color: rgb(0, 162, 255);">
+    <h2 class="d-flex justify-content-center text-light">AVAILABLE LOCATIONS OUTSIDE KERALA</h2>
+  </div>
+
+  <div class=" p-5 d-flex justify-content-center mt-0 mx-5 border border-3 shadow mb-5" style="width: 1155px;">
+    <div class="card shadow mx-4" style="width: 22rem;">
+      <img src="https://www.providentdeensgate.net.in/images/provident/electronic-city-in-bangalore.webp" class="card-img-top" width="100%" height="200px"  alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Bangalore</h5>
+        <a href="{% url 'cars' 'Bangalore' %}" class="stretched-link"></a>
+      </div>
+    </div>
+    <div class="card shadow mx-4" style="width: 22rem;">
+      <img src="https://s3.india.com/wp-content/uploads/2024/04/Feature-Image_-Mangalore-8.jpg?impolicy=Medium_Widthonly&w=700" class="card-img-top" width="100%" height="200px"  alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Mangalore</h5>
+        <a href="{% url 'cars' 'Mangalore' %}" class="stretched-link"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock nav %}

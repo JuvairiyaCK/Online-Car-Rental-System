@@ -1,0 +1,97 @@
+{% extends 'navbar.html '%}
+{% block navbar %}
+{% load static %}
+
+<section class="slide1">
+  <!-- Carousel Section -->
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="{% static 'images/erent15.jpg' %}" class="d-block w-100" alt="Slide 1" style="height: 500px;">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Rent Your Dream Car!!</h4>
+                <p>The best cars at lowest rates.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="{% static 'images/erent18.jpg' %}" class="d-block w-100" alt="Slide 2" style="height: 500px;">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Join us to make this family vast!</h4>
+                <p>Enjoy every moment with your family.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <img src="{% static 'images/erent19.jpg' %}" class="d-block w-100" alt="Slide 3" style="height: 500px;">
+              <div class="carousel-caption d-none d-md-block">
+                <h4>Sign up.Save big.</h4>
+                <p>Just rent a car of your wish from our vast collection!!</p>
+              </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+</section>
+     
+
+        <div class="mt-3 border border-0 mb-1 bg bg-light p-2 shadow" style="height: 120px; ">
+             <h4 class="d-flex justify-content-center mt-2 p-4 text-dark" id="abt">ABOUT THE CAR RENTAL SYSTEM</h4>
+        </div>
+
+          <div class="w-100 row p-3 border border-0 shadow mx-0" style="background-color: grey;">
+            <div class="col text-start p-2">
+                <div class="p-3">
+                <div id="carouselExampleControls" class="carousel slide border border-rounded shadow" data-bs-ride="carousel">
+                 <div class="carousel-inner">
+                   <div class="carousel-item active">
+                     <img src="{% static 'images/erent1.jpg' %}" style="height: 300px;" class="d-block w-100" alt="...">
+                   </div>
+                   <div class="carousel-item">
+                     <img src="{% static 'images/erent4.jpg' %}" style="height: 300px;" class="d-block w-100" alt="...">
+                   </div>
+                   <div class="carousel-item">
+                     <img src="{% static 'images/erent3.jpg' %}" style="height: 300px;" class="d-block w-100" alt="...">
+                   </div>
+                 </div>
+                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                   <span class="visually-hidden">Next</span>
+                 </button>
+                </div> 
+               </div>
+            </div>
+             <div class="col text-end p-3">
+                <p style="text-align: justify;" class="text-light">A car rental, hire car or car hire agency is a company that rents automobiles for short periods of time to the public,
+                  generally ranging from a few hours to a few weeks. It is often organized with numerous local branches 
+                  (which allow a user to return a vehicle to a different location), and primarily located near airports or busy city 
+                  areas and often complemented by a website allowing online reservations.
+                  Car rental agencies primarily serve people who require a temporary vehicle, for example, 
+                  those who do not own their own car who are out of town, or owners of damaged or destroyed vehicles who are awaiting repair or
+                  insurance compensation.
+                  Car rental companies provide a fleet of vehicles that the customers can choose from based on their needs, 
+                  like size, model, and duration of use. The rental agreement includes the terms regarding the rental period, mileage limitations, fuel responsibilities, and insurance coverage.
+                  It's a convenient solution for those who require transportation for travel, business, or other purposes without the long-term commitment of owning a vehicle.
+                  <a href="{% url 'log' %}" class="text-info" style="text-decoration: none;">BOOK NOW</a>
+                </p>
+             </div>
+        </div>
+        
+        {% include 'footer.html' %}
+
+       
+{% endblock navbar %}

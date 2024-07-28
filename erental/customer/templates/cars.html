@@ -1,0 +1,18 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<h1 class="d-flex justify-content-center text-info p-3 ">Car List</h1>
+<div class="p-5 m-3 row">
+{% for i in data %}
+    <!-- <p>{{i}}</p> -->
+    <div class="card shadow mb-4 me-1" style="width: 18rem;">
+        <img src="{{i.image.url}}" class="card-img-top" alt="car-img" height="200px">
+        <div class="card-body">
+          <h5 class="card-title">{{i.title}}</h5>
+          <p class="card-text">Rs:{{i.rent}}</p>
+          <a href="{% url 'cdet' i.id %}" class="stretched-link"></a>
+        </div>
+      </div>
+{% endfor %}
+</div>
+{% include 'footer.html' %}
+{% endblock nav%}

@@ -1,0 +1,46 @@
+{% extends  'nav.html' %}
+{% block nav %}
+   <div class="container-fluid p-5">
+      <h1>{{car.title}}</h1>
+      <div class="border p-3 shadow row">
+         <div class="col">
+            <img src="{{car.image.url}}" alt="car" class="img-fluid" style="height: 400px;">
+         </div>
+         <div class="col d-flex flex-column justify-content-center p-3">
+            <h2>{{car.title}}</h2>
+            <!-- <p>category:{{product.category}}</p> -->
+            <h3>{{car.description}}</h3>
+            <h3>Rent:RS.{{car.rent}}</h3>
+            <div class="mt-5 ms-3 me-5">
+               <!-- <a href="" class="btn btn-primary">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Place Order
+               </a> -->
+               {% if car.isavailable == True %}
+                  <div class="d-flex justify-content-between">
+                     <a href="{% url 'cout' car.id %}" class="btn btn-success">
+                        <i class="fa-solid fa-key" style="color: #fcfcfc;"></i>
+                        Book
+                     </a>
+                     <a href="{% url 'chome'  %}" class="btn btn-danger me-2">
+                        <i class="fa-solid fa-backward" style="color: #f4f1f1;"></i>
+                        Back
+                     </a>
+                  </div>
+               {% endif %}
+               {% if car.isavailable == False %}
+                  <div class="d-flex justify-content-between">
+                     <h3 class="text-danger">You missed it</h3>
+                     <a href="{% url 'chome' %}" class="btn btn-danger me-2">
+                        <i class="fa-solid fa-backward" style="color: #f4f1f1;"></i>
+                        Back
+                     </a>
+                  </div>
+               {% endif %}
+
+            </div>
+         </div>
+      </div>
+   </div>
+   {% include 'footer.html' %}
+{% endblock %}
